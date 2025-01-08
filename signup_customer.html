@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup as Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+        }
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        .signup-container h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1abc9c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup as Customer</h2>
+        <form action="/signup" method="post">
+            <input type="hidden" name="usertype" value="customer">
+            <label for="name">Customer Name:</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z ]+" minlength="2" maxlength="20" title="Name must contain only alphabets and contain atleast two characters" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="mob">Mobile:</label>
+            <input type="text" id="mob" name="mob" pattern="[6-9][0-9]{9}" title="Numbers can not contain alphabets, number shuld be of exactly 10 digits, number should start with 6,7, 8 or 9" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="4" title="password should containt at least 4 characters" required>
+            <button type="submit">Signup</button>
+            <h1> </h1>
+            <a href="login.html">already have account? login here</a>
+        </form>
+    </div>
+</body>
+</html>
